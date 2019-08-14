@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/lll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MemoWriteActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:background="@color/colorHint"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btnFont"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="24dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgFont"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                android:src="@drawable/setting_w"/>
+
+            <TextView
+                android:id="@+id/tvFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="폰트"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnCheck"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgCheck"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                android:src="@drawable/setting_w"/>
+
+            <TextView
+                android:id="@+id/tvCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="체크"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnAlign"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgAlign"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                android:src="@drawable/setting_w"/>
+
+            <TextView
+                android:id="@+id/tvAlign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="정렬"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnSaveMemo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="16dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                android:src="@drawable/setting_w"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="저장"
+                android:textColor="@color/colorDelete"
+                android:textSize="16dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frSetting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:visibility="invisible"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp">
+
+        <LinearLayout
+            android:id="@+id/linearFont"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/imgBold"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/bold_b"/>
+
+            <ImageView
+                android:id="@+id/imgUnderline"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/underline_b"/>
+
+            <ImageView
+                android:id="@+id/imgStrike"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/strike_b"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearAlign"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/imgLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/left_b"/>
+
+            <ImageView
+                android:id="@+id/imgMiddle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/middle_b"/>
+
+            <ImageView
+                android:id="@+id/imgRight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/right_b"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_Write"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:layout_marginTop="-16dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="제목"
+                android:textColorHint="@color/colorHint"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="48dp"
+                android:background="@null"
+                android:textCursorDrawable="@null"/>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="48dp"
+                android:layout_marginTop="6dp"
+                android:text="2019.03.04"
+                android:textColor="@color/colorText2"/>
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edtMemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="48dp"
+            android:background="@null"
+            android:cursorVisible="true"
+            android:gravity="top|left"
+            android:hint="메모 내용을 입력하세요."
+            android:textColorHint="@color/colorText2"
+            android:textCursorDrawable="@null"
+            android:textSize="16dp" />
+
+        <ListView
+            android:id="@+id/listMemoWrite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:dividerHeight="0dp">
+
+        </ListView>
+
+
+    </LinearLayout>
+
+</LinearLayout>
