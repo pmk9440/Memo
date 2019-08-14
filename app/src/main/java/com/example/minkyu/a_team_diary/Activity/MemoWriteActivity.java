@@ -31,7 +31,6 @@ import android.widget.TextView;
 import com.example.minkyu.a_team_diary.DB.Contract;
 import com.example.minkyu.a_team_diary.DB.MemoDBHelper;
 import com.example.minkyu.a_team_diary.R;
-import com.example.minkyu.a_team_diary.ViewItem.MemoWriteItem;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -48,9 +47,6 @@ public class MemoWriteActivity extends AppCompatActivity {
     LinearLayout btnCheck;
     LinearLayout btnAlign;
     LinearLayout btnSaveMemo;
-
-    ListView listMenoWrite;
-    MemoWriteAdapter adapter;
 
     ImageView imgFont;
     ImageView imgCheck;
@@ -70,8 +66,6 @@ public class MemoWriteActivity extends AppCompatActivity {
 
     EditText edtTitle;
     EditText edtMemo;
-    EditText edtMemoWrite;
-    int ref;
 
     LinearLayout linear_Write;
     LinearLayout.LayoutParams params;
@@ -152,77 +146,6 @@ public class MemoWriteActivity extends AppCompatActivity {
 
         if (click.equals("item")) {
             readMemo();
-        }
-
-        listMenoWrite = (ListView) findViewById(R.id.listMemoWrite);
-        adapter = new MemoWriteAdapter();
-        adapter.addMemo("");
-        listMenoWrite.setAdapter(adapter);
-
-    }
-
-    public class MemoWriteAdapter extends BaseAdapter {
-
-        ArrayList<MemoWriteItem> memos = new ArrayList<MemoWriteItem>();
-        ArrayList<MemoWriteItem> Temp = memos;
-
-        @Override
-        public int getCount() {
-            return memos.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return memos.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            final int pos = Temp.get(position).getNum();
-            final Context context = parent.getContext();
-
-            if (convertView == null) {
-                LayoutInflater inflater =
-                        (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = inflater.inflate(R.layout.memowriteitem, parent, false);
-
-                edtMemoWrite = (EditText) convertView.findViewById(R.id.edtMemoWrite);
-                convertView.setTag(edtMemoWrite);
-            }
-
-            ref = position;
-
-            edtMemoWrite.setText(memos.get(position).getMemo());
-
-            edtMemoWrite.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable s) {
-                    Temp.get(ref).setMemo(s.toString());
-                }
-            });
-
-            return convertView;
-        }
-
-        public void addMemo(String memo) {
-            MemoWriteItem item = new MemoWriteItem();
-            item.setMemo(memo);
-            memos.add(item);
         }
     }
 
